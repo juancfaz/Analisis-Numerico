@@ -16,11 +16,15 @@ int main()
     double a, b, x, et;
     int i = 1, opc = 0, n;
 
-    cout << "Dame el intervalo a: ";
-    cin >> a;
+    do
+    {
+        cout << "Dame el intervalo a: ";
+        cin >> a;
 
-    cout << "Dame el intervalo b: ";
-    cin >> b;
+        cout << "Dame el intervalo b: ";
+        cin >> b;
+    }
+    while ((f(a) > 0 && f(b) > 0) || (f(a) < 0 && f(b) < 0) );
 
     cout << endl << "Menu del metodo a elegir" << endl;
     cout << "1. Error de truncamiento" << endl;
