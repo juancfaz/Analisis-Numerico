@@ -1,3 +1,5 @@
+//Juan Carlos Faz Leal
+
 #include <iostream>
 #include <math.h>
 #include <iomanip>
@@ -10,10 +12,13 @@ double  f(double x)
     return x;
 }
 
+
 int main()
 {
     double a, b, x, et;
     int i = 1, opc = 0, n;
+
+    cout << "Bisecci" << char(162) << "n" << endl << endl;
 
     cout << "Dame el intervalo a: ";
     cin >> a;
@@ -32,20 +37,18 @@ int main()
         cin >> b;
     }
 
-    cout << endl << "MenÃº del mÃ©todo a elegir" << endl;
+    cout << endl << "Men" << char(163) << " del m" << char(130) << "todo a elegir" << endl;
     cout << "1. Error de truncamiento" << endl;
-    cout << "2. Numero de pasos" << endl;
-    cout << "Opcion: ";
+    cout << "2. N" << char(163) << "mero de pasos" << endl;
+    cout << "Opci" << char(162) << "n: ";
     cin >> opc;
 
     switch (opc) {
         case 1:
             cout << "Error de truncamiento: ";
             cin >> et;
-            cout << "        |Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|" << endl;
-            cout << "\t" << "| i |" << " a          |" << setw(8) << " b             |" << "\t" << setw(8) << " x       |" << endl;
-            cout << "        |Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|" << endl;
-            cout << setprecision(6) << fixed;
+
+
             while(abs(b-a) >= et)
             {
                 x = (a+b)/2.0;
@@ -60,15 +63,15 @@ int main()
                 }
                 i++;
             }
-            cout << "        Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯" << endl;
+            cout << "        ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯" << endl;
             break;
         case 2:
-            cout << "NÃºmero de pasos: ";
+            cout << "N" << char(163) << "mero de pasos: ";
             cin >> n;
-            cout << "        |Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|" << endl;
+            cout << "        |¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|" << endl;
             cout << "\t" << "| i |" << " a          |" << setw(8) << " b             |" << "\t" << setw(8) << " x       |" << endl;
-            cout << "        |Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯|" << endl;
-            cout << setprecision(6) << fixed;
+            cout << "        |¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|" << endl;
+
             while (i <= n) {
                 x = (a+b)/2.0;
                 cout << "\t| " << i << " |\t" << setw(8) << a << " |\t" << setw(8) << b << " |\t" << setw(8) << x << " | " << endl;
@@ -82,10 +85,10 @@ int main()
                 }
                 i++;
             }
-            cout << "        Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯" << endl;
+            cout << "        ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯" << endl;
             break;
         default:
-            cout << "OpciÃ³n invalida" << endl;
+            cout << "Opci" << char(162) << "n inv" << char(160) << "lida" << endl;
             break;
     }
 
