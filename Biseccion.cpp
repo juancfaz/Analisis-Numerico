@@ -6,7 +6,7 @@ using namespace std;
 
 double  f(double x)
 {
-    x = pow(x,10)-1;
+    x = exp(-x)-cos(3*x)-0.5;
     return x;
 }
 
@@ -15,15 +15,22 @@ int main()
     double a, b, x, et;
     int i = 1, opc = 0, n;
 
-    do
+    cout << "Dame el intervalo a: ";
+    cin >> a;
+
+    cout << "Dame el intervalo b: ";
+    cin >> b;
+
+    while ((f(a) > 0 && f(b) > 0) || (f(a) < 0 && f(b) < 0))
     {
+        cout << endl << "Intervalo incorrecto, vuelva a intentar." << endl;
+
         cout << "Dame el intervalo a: ";
         cin >> a;
 
         cout << "Dame el intervalo b: ";
         cin >> b;
     }
-    while ((f(a) > 0 && f(b) > 0) || (f(a) < 0 && f(b) < 0) );
 
     cout << endl << "Menú del método a elegir" << endl;
     cout << "1. Error de truncamiento" << endl;
@@ -39,7 +46,7 @@ int main()
             cout << "\t" << "| i |" << " a          |" << setw(8) << " b             |" << "\t" << setw(8) << " x       |" << endl;
             cout << "        |¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|" << endl;
             cout << setprecision(6) << fixed;
-            while(abs(b-a) > et)
+            while(abs(b-a) >= et)
             {
                 x = (a+b)/2.0;
                 cout << "\t| " << i << " |\t" << setw(8) << a << " |\t" << setw(8) << b << " |\t" << setw(8) << x << " | " << endl;
@@ -53,6 +60,7 @@ int main()
                 }
                 i++;
             }
+            cout << "        ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯" << endl;
             break;
         case 2:
             cout << "Número de pasos: ";
@@ -74,6 +82,7 @@ int main()
                 }
                 i++;
             }
+            cout << "        ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯" << endl;
             break;
         default:
             cout << "Opción invalida" << endl;
