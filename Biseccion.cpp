@@ -10,7 +10,6 @@ double  f(double x)
     return x;
 }
 
-
 int main()
 {
     double a, b, x, et;
@@ -26,7 +25,7 @@ int main()
     }
     while ((f(a) > 0 && f(b) > 0) || (f(a) < 0 && f(b) < 0) );
 
-    cout << endl << "Menu del metodo a elegir" << endl;
+    cout << endl << "Menú del método a elegir" << endl;
     cout << "1. Error de truncamiento" << endl;
     cout << "2. Numero de pasos" << endl;
     cout << "Opcion: ";
@@ -36,11 +35,14 @@ int main()
         case 1:
             cout << "Error de truncamiento: ";
             cin >> et;
-            cout << "\t" << "i" << "\t" << setw(8) << "a" << "\t" << setw(10) << "b" << "\t" << setw(10) << "x" << endl;
+            cout << "        |¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|" << endl;
+            cout << "\t" << "| i |" << " a          |" << setw(8) << " b             |" << "\t" << setw(8) << " x       |" << endl;
+            cout << "        |¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|" << endl;
+            cout << setprecision(6) << fixed;
             while(abs(b-a) > et)
             {
                 x = (a+b)/2.0;
-                cout << "\t" << i << "\t" << setw(8) << a << "\t" << setw(10) << b << "\t" << setw(10) << x << endl;
+                cout << "\t| " << i << " |\t" << setw(8) << a << " |\t" << setw(8) << b << " |\t" << setw(8) << x << " | " << endl;
                 if(f(a) * f(x) < 0.0)
                 {
                     b = x;
@@ -53,12 +55,15 @@ int main()
             }
             break;
         case 2:
-            cout << "Numero de pasos: ";
+            cout << "Número de pasos: ";
             cin >> n;
-            cout << "\t" << "i" << "\t" << setw(8) << "a" << "\t" << setw(10) << "b" << "\t" << setw(10) << "x" << endl;
+            cout << "        |¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|" << endl;
+            cout << "\t" << "| i |" << " a          |" << setw(8) << " b             |" << "\t" << setw(8) << " x       |" << endl;
+            cout << "        |¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|" << endl;
+            cout << setprecision(6) << fixed;
             while (i <= n) {
                 x = (a+b)/2.0;
-                cout << "\t" << i << "\t" << setw(8) << a << "\t" << setw(10) << b << "\t" << setw(10) << x << endl;
+                cout << "\t| " << i << " |\t" << setw(8) << a << " |\t" << setw(8) << b << " |\t" << setw(8) << x << " | " << endl;
                 if(f(a) * f(x) < 0.0)
                 {
                     b = x;
@@ -71,7 +76,7 @@ int main()
             }
             break;
         default:
-            cout << "Opcion invalida" << endl;
+            cout << "Opción invalida" << endl;
             break;
     }
 
